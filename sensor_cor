@@ -56,6 +56,8 @@ void loop()
 
 void show_color(int rr, int gg, int bb, bool show)
 {
+  if(show)
+  {
   Serial.print("Vermelho:");
   Serial.print(rr, DEC);
   Serial.print(",  Verde:");
@@ -63,53 +65,67 @@ void show_color(int rr, int gg, int bb, bool show)
   Serial.print(",  Azul:");
   Serial.print(bb, DEC);
   Serial.println();
-  if(show)
-  {
     Serial.println(set_color(rr, gg, bb));
   }
 }
 String set_color(int rr, int gg, int bb)
 {
   String nova_cor = "";
-  if( rr < 100 && gg > 130 && bb > 125  ){
+  if( rr > 20 && rr < 100 && gg > 90 && gg < 140 && bb > 90 && bb < 120  ){
+    nova_cor = "Rosa Choque";
+  } else if( rr > 40 && rr < 120 && gg > 120 && gg < 180 && bb > 90 && bb < 140 ){
+    nova_cor = "Rosa";
+  }  else if( rr < 100 && gg > 130 && bb > 125 ){
     nova_cor = "Vermelho";
-  } else if( rr > 140 && rr < 220 && gg > 240 && gg < 320 && bb > 200 && bb < 280  ){
+  }  else if( rr > 100 && rr < 180 && gg > 200 && gg < 340 && bb > 200 && bb < 280 ){
+    nova_cor = "Vermelho Escuro";
+  } else if( rr > 140 && rr < 220 && gg > 260 && gg < 340 && bb > 200 && bb < 280  ){
     nova_cor = "Vinho";
   }  else if( rr > 45 && rr < 80 && gg > 75 && gg < 110 && bb > 60 && bb < 110  ){
     nova_cor = "Rosa Claro";
-  } else if( rr > 70 && rr < 140 && gg > 180 && gg < 300 && bb > 180 && bb < 300  ){
+  } else if( rr > 70 && rr < 140 && gg > 180 && gg < 300 && bb > 180 && bb < 300 ){
     nova_cor = "Laranja";
-  } else if( rr > 70 && rr < 140 && gg > 120 && gg < 190 && bb > 110 && bb < 180  ){
+  } else if( rr > 140 && rr < 180 && gg > 210 && gg < 260 && bb > 210 && bb < 260 ){
+    nova_cor = "Beige";
+  } else if( rr > 70 && rr < 140 && gg > 120 && gg < 190 && bb > 110 && bb < 180 ){
     nova_cor = "Amêndoa";
-  } else if( rr > 50 && rr < 110 && gg > 100 && gg < 140 && bb > 90 && bb < 130  ){
+  } else if( rr > 50 && rr < 110 && gg > 100 && gg < 140 && bb > 90 && bb < 130 ){
     nova_cor = "Branco Creme";
-  } else if( rr > 40 && rr < 110 && gg > 80 && gg < 130 && bb > 110 && bb < 200  ){
+  } else if( rr > 40 && rr < 110 && gg > 80 && gg < 130 && bb > 110 && bb < 200 ){
     nova_cor = "Amarelo Queimado";
-  } else if( rr < 60 && rr > 0 && gg < 60 && bb > 75  ){
+  } else if( rr > 0 && rr < 60 && gg > 30 && gg < 60 && bb > 75 ){
     nova_cor = "Amarelo";
-  }else if( rr < 190 && gg > 200 && bb < 160  ){
+  } else if( rr > 20 && rr < 90 && gg < 60 && bb > 75 ){
+    nova_cor = "Amarelo Claro";
+  }else if( rr < 190 && gg > 200 && bb < 160 ){
     nova_cor = "Roxo";
-  }else if( rr > 140 && rr < 220 && gg > 100 && gg < 140 && bb < 95  ){
+  }else if( rr > 140 && rr < 220 && gg > 100 && gg < 140 && bb < 95 ){
     nova_cor = "Azul";
-  }else if( rr > 220 && rr < 320 && gg >= 140 && gg < 220 && bb < 130  ){
+  }else if( rr > 220 && rr < 320 && gg >= 140 && gg < 220 && bb < 130 ){
     nova_cor = "Azul Escuro";
-  }else if( rr > 100 && gg < 100 && gg > 60 && bb < 95  ){
+  }else if( rr > 100 && gg < 100 && gg > 60 && bb < 95 ){
     nova_cor = "Ciano";
-  }else if( rr > 100 && gg > 50 && gg < 110 && bb > 30 && bb < 100  ){
+  }else if( rr > 100 && gg > 50 && gg < 110 && bb > 30 && bb < 100 ){
     nova_cor = "Turquesa";
-  }else if( rr > 200 && gg < 150 && bb > 160  ){
+  }else if( rr > 200 && gg < 150 && bb > 160 ){
     nova_cor = "Verde";
-  }else if( rr > 40 && rr < 90 && gg > 30 && gg < 90 && bb > 90  ){
+  }else if( rr > 60 && rr < 110 && gg > 30 && gg < 90 && bb > 90 ){
     nova_cor = "Verde Lima";
-  }else if( rr > 280 && gg > 200  && gg < 270 && bb > 200 && bb < 300  ){
+  }else if( rr > 280 && gg > 200  && gg < 270 && bb > 200 && bb < 300 ){
     nova_cor = "Turquesa Escuro";
-  }else if( rr > 200 && rr < 280 && gg > 260 && gg < 320 && bb > 240 && bb < 300  ){
+  }else if( rr > 200 && rr < 280 && gg > 260 && gg < 360 && bb > 240 && bb < 340 ){
     nova_cor = "Marrom";
-  }else if( rr > 280 && rr < 360 && gg > 360 && gg < 440 && bb > 320 && bb < 400  ){
+  }else if( rr > 280 && rr < 360 && gg > 360 && gg < 440 && bb > 320 && bb < 400 ){
     nova_cor = "Marrom Escuro";
-  }else if( rr < 50 && gg < 60 && bb < 50  ){
+  }else if( rr < 50 && gg < 60 && bb < 50 ){
     nova_cor = "Branco";
-  }else if( rr > 350 && gg > 350 && bb > 300  ){
+  }else if( rr > 110 && rr < 140 && gg > 110 && gg < 140 && bb > 90 && bb < 130 ){
+    nova_cor = "Cinza Claro";
+  }else if( rr > 250 && rr < 350 && gg > 250 && gg < 350 && bb > 200 && bb < 300 ){
+    nova_cor = "Cinza";
+  }else if( rr >= 350 && rr < 450 && gg >= 350 && gg < 450 && bb >= 300 && bb < 400 ){
+    nova_cor = "Chumbo";
+  }else if( rr > 450 && gg > 450 && bb > 400 ){
     nova_cor = "Preto";
   }else{
     nova_cor = "Indeterminado";
