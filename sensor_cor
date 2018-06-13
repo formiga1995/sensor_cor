@@ -103,6 +103,8 @@ String set_color(int rr, int gg, int bb)
     nova_cor = "Azul";
   }else if( rr > 220 && rr < 320 && gg >= 140 && gg < 220 && bb < 130 ){
     nova_cor = "Azul Escuro";
+  }else if( rr > 360 && rr < 520 && gg >= 300 && gg < 370 && bb < 290 && bb > 210 ){
+    nova_cor = "Azul Marinho";
   }else if( rr > 100 && gg < 100 && gg > 60 && bb < 95 ){
     nova_cor = "Ciano";
   }else if( rr > 100 && gg > 50 && gg < 110 && bb > 30 && bb < 100 ){
@@ -132,7 +134,7 @@ String set_color(int rr, int gg, int bb)
   }
   return nova_cor;
 }
-void color()  
+void color()   
 {  
   digitalWrite(s2, LOW);  
   digitalWrite(s3, LOW);  
